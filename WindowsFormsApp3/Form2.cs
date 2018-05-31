@@ -65,7 +65,7 @@ namespace WindowsFormsApp3
                 command.Connection = conn;
                 command.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("TI LOH");
+                MessageBox.Show("Клиент добавлен");
                 klientTableAdapter.Update(bazaDataSet3.klient);
                 klientTableAdapter.Fill(bazaDataSet3.klient);
 
@@ -90,7 +90,7 @@ namespace WindowsFormsApp3
             command.CommandText = "DELETE FROM Klient WHERE idklienta = " + idK;
             command.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("DELETE OK");
+            MessageBox.Show("клиент удален");
             klientTableAdapter.Update(bazaDataSet3.klient);
             klientTableAdapter.Fill(bazaDataSet3.klient);
         }

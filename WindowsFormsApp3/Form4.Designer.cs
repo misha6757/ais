@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nomerdogovoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.klientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vidachaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dogovorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bazaDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bazaDataSet2 = new WindowsFormsApp3.bazaDataSet2();
@@ -51,17 +56,14 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.nomerdogovoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.klientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vidachaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dogovorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaDataSet2BindingSource)).BeginInit();
@@ -99,6 +101,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(544, 220);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // nomerdogovoraDataGridViewTextBoxColumn
+            // 
+            this.nomerdogovoraDataGridViewTextBoxColumn.DataPropertyName = "nomerdogovora";
+            this.nomerdogovoraDataGridViewTextBoxColumn.HeaderText = "Номер договора";
+            this.nomerdogovoraDataGridViewTextBoxColumn.Name = "nomerdogovoraDataGridViewTextBoxColumn";
+            // 
+            // klientDataGridViewTextBoxColumn
+            // 
+            this.klientDataGridViewTextBoxColumn.DataPropertyName = "klient";
+            this.klientDataGridViewTextBoxColumn.HeaderText = "Клиент";
+            this.klientDataGridViewTextBoxColumn.Name = "klientDataGridViewTextBoxColumn";
+            // 
+            // chenaDataGridViewTextBoxColumn
+            // 
+            this.chenaDataGridViewTextBoxColumn.DataPropertyName = "chena";
+            this.chenaDataGridViewTextBoxColumn.HeaderText = "цена";
+            this.chenaDataGridViewTextBoxColumn.Name = "chenaDataGridViewTextBoxColumn";
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "продукт";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            // 
+            // vidachaDataGridViewTextBoxColumn
+            // 
+            this.vidachaDataGridViewTextBoxColumn.DataPropertyName = "vidacha";
+            this.vidachaDataGridViewTextBoxColumn.HeaderText = "выдача";
+            this.vidachaDataGridViewTextBoxColumn.Name = "vidachaDataGridViewTextBoxColumn";
             // 
             // dogovorBindingSource
             // 
@@ -219,36 +251,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // nomerdogovoraDataGridViewTextBoxColumn
-            // 
-            this.nomerdogovoraDataGridViewTextBoxColumn.DataPropertyName = "nomerdogovora";
-            this.nomerdogovoraDataGridViewTextBoxColumn.HeaderText = "Номер договора";
-            this.nomerdogovoraDataGridViewTextBoxColumn.Name = "nomerdogovoraDataGridViewTextBoxColumn";
-            // 
-            // klientDataGridViewTextBoxColumn
-            // 
-            this.klientDataGridViewTextBoxColumn.DataPropertyName = "klient";
-            this.klientDataGridViewTextBoxColumn.HeaderText = "Клиент";
-            this.klientDataGridViewTextBoxColumn.Name = "klientDataGridViewTextBoxColumn";
-            // 
-            // chenaDataGridViewTextBoxColumn
-            // 
-            this.chenaDataGridViewTextBoxColumn.DataPropertyName = "chena";
-            this.chenaDataGridViewTextBoxColumn.HeaderText = "цена";
-            this.chenaDataGridViewTextBoxColumn.Name = "chenaDataGridViewTextBoxColumn";
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "продукт";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            // 
-            // vidachaDataGridViewTextBoxColumn
-            // 
-            this.vidachaDataGridViewTextBoxColumn.DataPropertyName = "vidacha";
-            this.vidachaDataGridViewTextBoxColumn.HeaderText = "выдача";
-            this.vidachaDataGridViewTextBoxColumn.Name = "vidachaDataGridViewTextBoxColumn";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -303,11 +305,34 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "калькулятор ";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.dogovorBindingSource;
+            this.comboBox1.DisplayMember = "nomerdogovora";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(418, 268);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 35;
+            this.comboBox1.ValueMember = "nomerdogovora";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(436, 303);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Удалить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 396);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -376,5 +401,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

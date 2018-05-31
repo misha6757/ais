@@ -58,7 +58,7 @@ namespace WindowsFormsApp3
             command.Connection = conn;
             command.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("TI LOH");
+            MessageBox.Show("заказ добавлен");
             dogovorTableAdapter.Update(bazaDataSet2.dogovor);
             dogovorTableAdapter.Fill(bazaDataSet2.dogovor);
         }
@@ -81,6 +81,29 @@ namespace WindowsFormsApp3
             int.TryParse(y, out b);
             xui = a * b;
             label1.Text = xui.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int idS;
+            idS = Convert.ToInt32(comboBox1.SelectedValue.ToString());
+            shopTableAdapter.Connection.Open();
+            OleDbCommand command = shopTableAdapter.Connection.CreateCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "DELETE FROM dogovor WHERE nomerdogovora = " + idS;
+            command.ExecuteNonQuery();
+            shopTableAdapter.Connection.Close();
+            OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;
+            Data Source=C:\Users\АМС\source\repos\WindowsFormsApp3\WindowsFormsApp3\baza.mdb;Persist Security Info=False");
+            conn.Open();
+            command.Connection = conn;
+            command.CommandType = CommandType.Text;
+            command.CommandText = "DELETE FROM dogovor WHERE nomerdogovora = " + idS;
+            command.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show("договор удален");
+            dogovorTableAdapter.Update(bazaDataSet2.dogovor);
+            dogovorTableAdapter.Fill(bazaDataSet2.dogovor);
         }
     }
 }

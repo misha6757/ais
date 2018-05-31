@@ -54,7 +54,7 @@ namespace WindowsFormsApp3
                 command.Connection = conn;
                 command.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("TI LOH");
+                MessageBox.Show("продукт добавлен");
                 shopTableAdapter.Update(bazaDataSet3.shop);
                 shopTableAdapter.Fill(bazaDataSet3.shop);
 
@@ -84,7 +84,7 @@ namespace WindowsFormsApp3
             command.CommandText = "DELETE FROM shop WHERE productid = " + idS;
             command.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("DELETE OK");
+            MessageBox.Show("продукт удален");
             shopTableAdapter.Update(bazaDataSet3.shop);
             shopTableAdapter.Fill(bazaDataSet3.shop);
         }
